@@ -22,7 +22,7 @@
     <% end %>
     <dt>Handler</dt>
     <dd>
-    <pre><%=h job.handler %></pre>
+    <pre><%=h YAML.load(job.handler).job_data.except("arguments").to_yaml %></pre>
     </dd>
     <% if job.last_error %>
       <dt>Last Error</dt>
